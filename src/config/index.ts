@@ -1,4 +1,5 @@
-require('dotenv').config();
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -17,7 +18,7 @@ export default {
    * The secret sauce to validate JWT
    */
   jwtSecret: process.env.JWT_SECRET,
-
+  saltRounds:parseInt(process.env.SALT_ROUNDS),
   /**
    * Used by Winston logger
    */
